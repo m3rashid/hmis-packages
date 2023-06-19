@@ -1,15 +1,24 @@
 {
   "name": "@hmis/gatekeeper",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {},
+  "type": "module",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "pnpm rollup -c",
+    "dev": "pnpm rollup -c -w"
+  },
   "license": "MIT",
-  "devDependencies": {
-    "typescript": "^5.0.2",
+  "dependencies": {
     "@rollup/plugin-typescript": "^11.1.1",
+    "express": "^4.18.2",
+    "mongoose": "^7.2.2",
+    "zod": "^3.21.4"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.17",
     "mongoose-paginate-v2": "^1.7.1",
     "rollup": "^3.21.7",
-    "tslib": "^2.5.0"
+    "tslib": "^2.5.0",
+    "typescript": "^5.0.2"
   }
 }
