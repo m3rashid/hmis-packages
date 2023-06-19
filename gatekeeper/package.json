@@ -1,0 +1,11 @@
+{
+  "name": "@hmis/gatekeeper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "license": "MIT",
+  "devDependencies": {
+    "typescript": "^5.0.2"
+  }
+}
