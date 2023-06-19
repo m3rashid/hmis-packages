@@ -168,3 +168,16 @@ export type Document<T> = Omit<mongoose.Document, '_id'> & T;
 export type PaginateModel<T> = mongoose.PaginateModel<Document<T>>;
 
 export type IDbSchemaKeys = keyof ModelSchemasTypes;
+
+export interface PaginatedListIResponse<T> {
+  docs: T[];
+  totalDocs: number;
+  limit: number;
+  totalPages: number;
+  page: number;
+  pagingCounter: number;
+  hasPrevPage: boolean;
+  hasNextPage: boolean;
+  prevPage: number | null;
+  nextPage: number | null;
+}
