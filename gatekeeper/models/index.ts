@@ -25,19 +25,6 @@ export interface IUser extends IBaseModel {
   profile: IProfile;
 }
 
-export const SEX = ['M', 'F', 'O'] as const; // male, female, other
-export const MARITAL_STATUS = ['S', 'M', 'D', 'W'] as const; // Single, Married, Divorced, Widowed
-export const BLOOD_GROUPS = [
-  'A+',
-  'A-',
-  'B+',
-  'B-',
-  'AB+',
-  'AB-',
-  'O+',
-  'O-',
-] as const;
-
 export interface IProfile extends IBaseModel {
   bio?: string;
   roomNumber?: string;
@@ -61,8 +48,6 @@ export interface IProfile extends IBaseModel {
   appointmentsAsPatient: IAppointment[];
   appointmentsAsReferredBy: IAppointment[];
 }
-
-export const NOT_ALLOWED_ROLE_ACTUAL_NAMES = ['DEVELOPER', 'SUPER_ADMIN'];
 
 type SpecialResource = 'ALL' | 'INDEPENDENT';
 export interface IPermission {
@@ -88,16 +73,6 @@ export interface IAttendance {
   }>;
 }
 
-export const DAYS: readonly string[] = [
-  'MON',
-  'TUE',
-  'WED',
-  'THU',
-  'FRI',
-  'SAT',
-  'SUN',
-];
-
 export interface IAvailability extends IBaseModel {
   day: string;
   startTime: string;
@@ -114,13 +89,6 @@ export interface IAddress extends IBaseModel {
   buildingNumber?: string;
   user: IProfile;
 }
-
-export const APPOINTMENT_STATUS = [
-  'PENDING',
-  'ACCEPTED',
-  'REJECTED',
-  'RESOLVED',
-] as const;
 
 export interface IAppointment extends IBaseModel {
   doctor: IUser;
@@ -139,8 +107,6 @@ export interface INotification extends IBaseModel {
   title: string;
   description: string;
 }
-
-export const TIME_OF_DAY = ['BM', 'AF'] as const; // before meal, after meal
 
 export interface IPrescription extends IBaseModel {
   remarks?: string;
@@ -175,13 +141,6 @@ export interface INonConsumable extends IBaseModel {
   nextServicingDate?: Date;
 }
 
-export const LEAVE_STATUS = [
-  'PENDING',
-  'ACCEPTED',
-  'REJECTED',
-  'ENDED',
-] as const;
-
 export interface ILeave extends IBaseModel {
   startDate: Date;
   endDate: Date;
@@ -209,18 +168,3 @@ export type Document<T> = Omit<mongoose.Document, '_id'> & T;
 export type PaginateModel<T> = mongoose.PaginateModel<Document<T>>;
 
 export type IDbSchemaKeys = keyof ModelSchemasTypes;
-
-export const modelNames: Record<IDbSchemaKeys, string> = {
-  address: 'Address',
-  appointment: 'Appointment',
-  availability: 'Availability',
-  consumable: 'Consumable',
-  leave: 'Leave',
-  nonConsumable: 'NonConsumable',
-  prescription: 'Prescription',
-  profile: 'Profile',
-  role: 'Role',
-  user: 'User',
-  attendance: 'Attendance',
-  notification: 'Notification',
-};

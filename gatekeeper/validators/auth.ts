@@ -1,6 +1,6 @@
 import { z } from 'zod';
 
-import { BLOOD_GROUPS, MARITAL_STATUS, SEX } from '../models';
+import { BLOOD_GROUPS, MARITAL_STATUS, SEX } from '../models/enums';
 import { baseAuthnCreateSchema, baseAuthnUpdateSchema } from './base';
 
 export const loginSchema = z.object({
