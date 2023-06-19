@@ -6,6 +6,10 @@
   "scripts": {},
   "license": "MIT",
   "devDependencies": {
-    "typescript": "^5.0.2"
+    "typescript": "^5.0.2",
+    "@rollup/plugin-typescript": "^11.1.1",
+    "mongoose-paginate-v2": "^1.7.1",
+    "rollup": "^3.21.7",
+    "tslib": "^2.5.0"
   }
 }
