@@ -7,6 +7,13 @@ export interface ILoginUser {
   email: string;
 }
 
+export interface IOtp {
+  _id: string;
+  otp: string;
+  email: string;
+  expiry: string;
+}
+
 export interface IBaseModel {
   _id: string;
   createdAt: Date;
@@ -100,7 +107,7 @@ export interface IAppointment extends IBaseModel {
     from: IUser; // maybe the receptionist/doctor, to patient
   }>;
   referredBy?: IUser;
-  prescription: IPrescription;
+  prescription?: IPrescription;
 }
 
 export interface INotification extends IBaseModel {
@@ -162,6 +169,7 @@ export type ModelSchemasTypes = Readonly<{
   user: IUser;
   attendance: IAttendance;
   notification: INotification;
+  otp: IOtp;
 }>;
 
 export type Document<T> = Omit<mongoose.Document, '_id'> & T;

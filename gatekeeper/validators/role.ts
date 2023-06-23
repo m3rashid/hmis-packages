@@ -10,7 +10,7 @@ export const createRoleSchema = baseAuthnCreateSchema.extend({
 export type CreateRoleBody = z.infer<typeof createRoleSchema>;
 
 export const deleteRoleSchema = baseAuthnUpdateSchema.extend({
-  roleId: z.string(),
+  _id: z.string(),
 });
 export type DeleteRoleBody = z.infer<typeof deleteRoleSchema>;
 

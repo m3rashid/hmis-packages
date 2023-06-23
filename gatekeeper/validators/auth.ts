@@ -56,6 +56,19 @@ export type CreateProfileBody = z.infer<typeof createProfileSchema>;
 export const updateProfileSchema = baseAuthnUpdateSchema
   .merge(createProfileSchema)
   .extend({
-    profileId: z.string(),
+    _id: z.string(),
   });
 export type UpdateProfileBody = z.infer<typeof updateProfileSchema>;
+
+export const forgotPasswordSchema = z.object({
+  email: z.string().email('Not a valid Email'),
+});
+export type ForgotPasswordBody = z.infer<typeof forgotPasswordSchema>;
+
+export const resetPasswordSchema = z.object({
+  password: z.string(),
+  confirmPassword: z.string(),
+  email: z.string().email('Not a valid Email'),
+  otp: z.string(),
+});
+export type ResetPasswordBody = z.infer<typeof resetPasswordSchema>;

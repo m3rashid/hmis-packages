@@ -13,7 +13,7 @@ export const createAddressSchema = baseAuthnCreateSchema.extend({
 export type CreateAddressBody = z.infer<typeof createAddressSchema>;
 
 export const deleteAddressSchema = baseAuthnUpdateSchema.extend({
-  addressId: z.string(),
+  _id: z.string(),
 });
 export type DeleteAddressBody = z.infer<typeof deleteAddressSchema>;
 

@@ -13,4 +13,5 @@ export const modelNames: Record<IDbSchemaKeys, string> = {
   user: 'User',
   attendance: 'Attendance',
   notification: 'Notification',
+	otp: "Otp",
 };

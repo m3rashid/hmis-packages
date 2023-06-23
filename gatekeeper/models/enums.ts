@@ -22,15 +22,7 @@ export const BLOOD_GROUPS = [
   'O-',
 ] as const;
 
-export const DAYS: readonly string[] = [
-  'MON',
-  'TUE',
-  'WED',
-  'THU',
-  'FRI',
-  'SAT',
-  'SUN',
-];
+export const DAYS = ['MON', 'TUE', 'WED', 'THU', 'FRI', 'SAT', 'SUN'] as const;
 
 export const LEAVE_STATUS = [
   'PENDING',

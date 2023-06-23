@@ -15,7 +15,7 @@ export const createConsumableSchema = baseAuthnCreateSchema.extend({
 export type CreateConsumableBody = z.infer<typeof createConsumableSchema>;
 
 export const deleteConsumableSchema = baseAuthnUpdateSchema.extend({
-  consumableId: z.string(),
+  _id: z.string(),
 });
 export type DeleteConsumableBody = z.infer<typeof deleteConsumableSchema>;
 
@@ -34,7 +34,7 @@ export const createNonConsumableSchema = baseAuthnCreateSchema.extend({
 export type CreateNonConsumableBody = z.infer<typeof createNonConsumableSchema>;
 
 export const deleteNonConsumableSchema = baseAuthnUpdateSchema.extend({
-  nonConsumableId: z.string(),
+  _id: z.string(),
 });
 export type DeleteNonConsumableBody = z.infer<typeof deleteNonConsumableSchema>;
 
