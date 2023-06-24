@@ -1,8 +1,7 @@
 import { z } from 'zod';
 
 export const baseAuthnCreateSchema = z.object({
-  deleted: z.boolean(),
-  createdBy: z.string(),
+  deleted: z.boolean().optional(),
 });
 export type BaseAuthnCreateBody = z.infer<typeof baseAuthnCreateSchema>;
 

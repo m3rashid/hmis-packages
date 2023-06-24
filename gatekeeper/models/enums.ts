@@ -30,3 +30,28 @@ export const LEAVE_STATUS = [
   'REJECTED',
   'ENDED',
 ] as const;
+
+export const PAYMENT_OPTIONS = [
+  'CASH',
+  'CREDIT_CARD',
+  'DEBIT_CARD',
+  'UPI',
+  'NET_BANKING',
+] as const;
+
+export const TIME_UNITS = [
+  'MINUTE',
+  'HOUR',
+  'DAY',
+  'WEEK',
+  'MONTH',
+	'YEAR'
+] as const;
+
+export const PAYMENT_STATUS = ['PENDING', 'ACCEPTED', 'REJECTED'] as const;
+
+export const OPD_STATUS = ['PENDING', 'RESOLVED', 'MIGRATED_TO_IPD'] as const;
+
+export const IPD_STATUS = ['ADMITTED', 'DISCHARGED', 'DEAD'] as const;
+
+export const APPOINTMENT_TYPE = ['WALK_IN', 'MOBILE_CALL'] as const;
