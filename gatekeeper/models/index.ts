@@ -11,7 +11,7 @@ export interface IOtp {
   _id: string;
   otp: string;
   email: string;
-  expiry: string;
+  expiry: Date;
 }
 
 export interface IBaseModel {
@@ -75,16 +75,13 @@ export interface IAttendance {
   _id: string;
   userId: IUser;
   date: Date;
-  slots: Array<{
-    from: Date;
-    to: Date;
-  }>;
+  slots: Array<{ from: Date; to: Date }>;
 }
 
 export interface IAvailability extends IBaseModel {
   day: string;
-  startTime: string;
-  endTime: string;
+  startTime: Date;
+  endTime: Date;
   user: IUser;
 }
 
@@ -143,7 +140,7 @@ export interface IAppointment extends IBaseModel {
   status: string;
   payment?: IPayment;
   type?: string;
-	timeMinutes: number // expected time in minutes
+  timeMinutes: number; // expected time in minutes
   date: Date;
 }
 
