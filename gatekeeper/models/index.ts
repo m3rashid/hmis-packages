@@ -27,6 +27,8 @@ export interface IUser extends IBaseModel {
   name: string;
   email: string;
   emailVerified: boolean;
+  isDoctor: boolean;
+  origin: string;
   password: string;
   roles: IRole[];
   profile: IProfile;
@@ -64,8 +66,7 @@ export interface IPermission {
 }
 
 export interface IRole extends IBaseModel {
-  displayName: string;
-  actualName: string;
+  name: string;
   description?: string;
   permissions: IPermission;
 }
@@ -84,7 +85,7 @@ export interface IAvailability extends IBaseModel {
   day: string;
   startTime: string;
   endTime: string;
-  profile: IProfile;
+  user: IUser;
 }
 
 export interface IAddress extends IBaseModel {
@@ -142,6 +143,7 @@ export interface IAppointment extends IBaseModel {
   status: string;
   payment?: IPayment;
   type?: string;
+	timeMinutes: number // expected time in minutes
   date: Date;
 }
 
@@ -158,7 +160,7 @@ export interface IPayment extends IBaseModel {
   reason?: string;
 }
 
-export interface INotification extends IBaseModel {
+export interface IAnnouncement extends IBaseModel {
   title: string;
   description: string;
 }
@@ -216,7 +218,7 @@ export type ModelSchemasTypes = Readonly<{
   role: IRole;
   user: IUser;
   attendance: IAttendance;
-  notification: INotification;
+  announcement: IAnnouncement;
   otp: IOtp;
   opd: IOpd;
   ipd: IIpd;

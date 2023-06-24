@@ -9,7 +9,7 @@ import * as baseValidator from './validators/base';
 import * as inventoryValidator from './validators/inventory';
 import * as ipdValidator from './validators/ipd';
 import * as leaveValidator from './validators/leave';
-import * as notificationValidator from './validators/notification';
+import * as announcementValidator from './validators/announcement';
 import * as opdValidator from './validators/opd';
 import * as paymentValidator from './validators/payment';
 import * as prescriptionValidator from './validators/prescription';
@@ -27,7 +27,7 @@ export {
   appointmentValidator,
   availabilityValidator,
   leaveValidator,
-  notificationValidator,
+  announcementValidator,
   prescriptionValidator,
   authValidator,
   baseValidator,

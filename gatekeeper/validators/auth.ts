@@ -1,6 +1,11 @@
 import { z } from 'zod';
 
-import { BLOOD_GROUPS, MARITAL_STATUS, SEX } from '../models/enums';
+import {
+  BLOOD_GROUPS,
+  MARITAL_STATUS,
+  SEX,
+  USER_ORIGIN,
+} from '../models/enums';
 import { baseAuthnCreateSchema, baseAuthnUpdateSchema } from './base';
 
 export const loginSchema = z.object({
@@ -15,6 +20,8 @@ export const userSignupSchema = baseAuthnCreateSchema
     emailVerified: z.boolean(),
     name: z.string().min(3).max(30),
     roles: z.array(z.string()),
+    origin: z.enum(USER_ORIGIN).optional(),
+    isDoctor: z.boolean().optional(),
     profile: z.string().optional(),
   });
 export type UserSignupBody = z.infer<typeof userSignupSchema>;

@@ -6,6 +6,7 @@ export const createAppointmentSchema = baseAuthnCreateSchema.extend({
   patient: z.string(),
   doctor: z.string(),
   status: z.enum(APPOINTMENT_STATUS),
+  timeMinutes: z.number(),
   chats: z.array(z.string()).optional(),
   referredBy: z.string().optional(),
   prescription: z.string().optional(),

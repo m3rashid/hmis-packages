@@ -45,7 +45,7 @@ export const TIME_UNITS = [
   'DAY',
   'WEEK',
   'MONTH',
-	'YEAR'
+  'YEAR',
 ] as const;
 
 export const PAYMENT_STATUS = ['PENDING', 'ACCEPTED', 'REJECTED'] as const;
@@ -55,3 +55,5 @@ export const OPD_STATUS = ['PENDING', 'RESOLVED', 'MIGRATED_TO_IPD'] as const;
 export const IPD_STATUS = ['ADMITTED', 'DISCHARGED', 'DEAD'] as const;
 
 export const APPOINTMENT_TYPE = ['WALK_IN', 'MOBILE_CALL'] as const;
+
+export const USER_ORIGIN = ['INTERNAL', 'EXTERNAL'] as const;

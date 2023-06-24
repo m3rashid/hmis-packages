@@ -12,7 +12,7 @@ export const modelNames: Record<IDbSchemaKeys, string> = {
   role: 'Role',
   user: 'User',
   attendance: 'Attendance',
-  notification: 'Notification',
+  announcement: 'Announcement',
   otp: 'Otp',
   payment: 'Payment',
 	opd: 'Opd',
