@@ -102,33 +102,38 @@ export interface IOpd extends IBaseModel {
   prescription: IPrescription;
   status: string;
   payment?: IPayment;
-	date: Date
-	nextDate?: Date;
+  date: Date;
+  nextDate?: Date;
 }
 
 export interface IIpd extends IBaseModel {
   patient: IUser;
   status: string;
-  payments?: Array<IPayment>;
+  payments: Array<IPayment>;
   history: Array<{
-		prescriptions: IPrescription;
+    prescriptions: IPrescription;
     doctor: IUser;
   }>;
   resources: Array<{
-		nonConsumables?: INonConsumable;
+    nonConsumable?: INonConsumable;
     consumables?: IConsumable;
     time?: number;
     timeUnit?: string;
   }>;
-  tests: Array<ITest>;
+  tests: Array<{
+    test: ITest;
+    remarks?: string;
+    suggestedBy: IUser;
+    payment?: IPayment;
+  }>;
   referredBy?: IUser;
   chats: Array<{
-		time: Date;
+    time: Date;
     remarks?: string;
     from: IUser; // maybe the receptionist/doctor, to patient
   }>;
-	fromDate: Date
-	toDate: Date
+  fromDate: Date;
+  toDate?: Date;
 }
 
 export interface IAppointment extends IBaseModel {
@@ -137,16 +142,13 @@ export interface IAppointment extends IBaseModel {
   status: string;
   payment?: IPayment;
   type?: string;
-	date: Date
+  date: Date;
 }
 
 export interface ITest extends IBaseModel {
   name: string;
   description?: string;
   costINR: number;
-  suggestedBy?: IUser;
-  testReports: Array<string>;
-  payment: IPayment;
 }
 
 export interface IPayment extends IBaseModel {

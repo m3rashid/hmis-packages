@@ -14,7 +14,7 @@ export const deleteLeaveSchema = baseAuthnUpdateSchema.extend({
 });
 export type DeleteLeaveBody = z.infer<typeof deleteLeaveSchema>;
 
-export const updateLeaveSchema = baseAuthnUpdateSchema
-  .merge(addLeaveSchema)
+export const updateLeaveSchema = addLeaveSchema
+  .merge(deleteLeaveSchema)
   .extend({});
 export type UpdateLeaveBody = z.infer<typeof updateLeaveSchema>;

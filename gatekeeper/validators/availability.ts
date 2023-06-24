@@ -8,13 +8,14 @@ export const createAvailabilitySchema = baseAuthnCreateSchema.extend({
   endTime: z.string(),
   profile: z.string(),
 });
+export type CreateAvailabilityBody = z.infer<typeof createAvailabilitySchema>
 
 export const deleteAvailabilitySchema = baseAuthnUpdateSchema.extend({
   _id: z.string(),
 });
 export type DeleteAvailabilityBody = z.infer<typeof deleteAvailabilitySchema>;
 
-export const updateAvailabilitySchema = baseAuthnUpdateSchema
-  .merge(createAvailabilitySchema)
+export const updateAvailabilitySchema = createAvailabilitySchema
+  .merge(deleteAvailabilitySchema)
   .extend({});
 export type UpdateAvailabilityBody = z.infer<typeof updateAvailabilitySchema>;

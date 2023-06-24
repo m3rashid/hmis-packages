@@ -23,7 +23,7 @@ export const deletePrescriptionSchema = baseAuthnUpdateSchema.extend({
 });
 export type DeletePrescriptionBody = z.infer<typeof deletePrescriptionSchema>;
 
-export const updatePrescriptionSchema = baseAuthnUpdateSchema
-  .merge(createPrescriptionSchema)
+export const updatePrescriptionSchema = createPrescriptionSchema
+  .merge(deletePrescriptionSchema)
   .extend({});
 export type UpdatePrescriptionBody = z.infer<typeof updatePrescriptionSchema>;

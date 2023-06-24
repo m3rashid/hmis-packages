@@ -17,7 +17,7 @@ export const deleteAppointmentSchema = baseAuthnUpdateSchema.extend({
 });
 export type DeleteAppointmentBody = z.infer<typeof deleteAppointmentSchema>;
 
-export const updateAppointmentSchema = baseAuthnUpdateSchema
-  .merge(createAppointmentSchema)
+export const updateAppointmentSchema = createAppointmentSchema
+  .merge(deleteAppointmentSchema)
   .extend({});
 export type UpdateAppointmentBody = z.infer<typeof updateAppointmentSchema>;
