@@ -19,7 +19,7 @@ export const userSignupSchema = baseAuthnCreateSchema
   .extend({
     emailVerified: z.boolean(),
     name: z.string().min(3).max(30),
-    roles: z.array(z.string()),
+    role: z.string().optional(),
     origin: z.enum(USER_ORIGIN).optional(),
     isDoctor: z.boolean().optional(),
     profile: z.string().optional(),

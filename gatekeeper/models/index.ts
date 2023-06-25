@@ -2,7 +2,7 @@ import mongoose from 'mongoose';
 
 export interface ILoginUser {
   _id: string;
-  roles: any;
+  role: any;
   name: string;
   email: string;
 }
@@ -30,7 +30,7 @@ export interface IUser extends IBaseModel {
   isDoctor: boolean;
   origin: string;
   password: string;
-  roles: IRole[];
+  role?: IRole;
   profile: IProfile;
 }
 
