@@ -8,6 +8,7 @@ const config = {
     file: 'dist/index.js',
   },
   plugins: [typescript()],
+	external: ['zod', 'mongoose', 'mongoose-paginate-v2']
 };
 
 export default config;

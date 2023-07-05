@@ -1,4 +1,4 @@
-import { IDbSchemaKeys } from './index';
+import { IDbSchemaKeys } from '.';
 
 export const modelNames: Record<IDbSchemaKeys, string> = {
   address: 'Address',
@@ -15,7 +15,13 @@ export const modelNames: Record<IDbSchemaKeys, string> = {
   announcement: 'Announcement',
   otp: 'Otp',
   payment: 'Payment',
-	opd: 'Opd',
-	ipd: 'Ipd',
-	test: 'Test'
-};
+  opd: 'Opd',
+  ipd: 'Ipd',
+  test: 'Test',
+  taskStatus: 'TaskStatus',
+  subTask: 'SubTask',
+  task: 'Task',
+  goal: 'Goal',
+  team: 'Team',
+  project: 'Project',
+} as const;

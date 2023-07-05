@@ -1,4 +1,5 @@
 import mongoose from 'mongoose';
+import 'mongoose-paginate-v2';
 
 export interface ILoginUser {
   _id: string;
@@ -203,6 +204,48 @@ export interface ILeave extends IBaseModel {
   status: string;
 }
 
+export interface ITaskStatus extends IBaseModel {
+	name: string;
+}
+
+export interface ISubTask extends IBaseModel {
+  title: string;
+  image?: string;
+  description?: string;
+  status: ITaskStatus;
+  expectedCompletionTime: Date;
+}
+
+export interface ITask extends IBaseModel {
+	title: string;
+	images?: string[];
+	description?: string;
+	assignedTo: IUser[];
+	subTasks: ISubTask[];
+	status: ITaskStatus;
+	expectedCompletionTime: Date;
+}
+
+export interface IGoal extends IBaseModel {
+	title: string;
+	description?: string;
+	achieved: boolean;
+}
+
+export interface IProject extends IBaseModel {
+	title: string;
+	description?: string;
+	tasks: ITask[];
+	goals: IGoal[];
+	teams: ITeam[];
+}
+
+export interface ITeam extends IBaseModel {
+	name: string;
+	description?: string;
+	users: IUser[];
+}
+
 export type ModelSchemasTypes = Readonly<{
   address: IAddress;
   appointment: IAppointment;
@@ -221,10 +264,16 @@ export type ModelSchemasTypes = Readonly<{
   ipd: IIpd;
   test: ITest;
   payment: IPayment;
+	taskStatus: ITaskStatus;
+	subTask: ISubTask;
+	task: ITask;
+	goal: IGoal;
+	project: IProject;
+	team: ITeam;
 }>;
 
 export type Document<T> = Omit<mongoose.Document, '_id'> & T;
-export type PaginateModel<T> = mongoose.PaginateModel<Document<T>>;
+export type PaginateModel<T> = mongoose.PaginateModel<Document<T>>; 
 
 export type IDbSchemaKeys = keyof ModelSchemasTypes;
 

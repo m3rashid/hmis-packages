@@ -19,6 +19,7 @@ import * as Validator from './validators';
 import * as MODELS from './models/index';
 import * as ENUMS from './models/enums';
 import { modelNames } from './models/names';
+import { paginatedCompiledModel } from './models/utils';
 
 export {
   ERRORS,
@@ -41,4 +42,5 @@ export {
   Validator,
   ENUMS,
   modelNames,
+  paginatedCompiledModel,
 };
