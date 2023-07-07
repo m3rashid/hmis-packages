@@ -1,6 +1,6 @@
-import { IDbSchemaKeys } from '.';
+import { IDbSchemaKey } from '.';
 
-export const modelNames: Record<IDbSchemaKeys, string> = {
+export const modelNames: Record<IDbSchemaKey, string> = {
   address: 'Address',
   appointment: 'Appointment',
   availability: 'Availability',

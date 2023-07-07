@@ -1,5 +1,5 @@
 import mongoose from 'mongoose';
-import { Document, IDbSchemaKeys, PaginateModel } from './index';
+import { Document, PaginateModel } from './index';
 import paginate from 'mongoose-paginate-v2';
 import { modelNames } from './names';
 

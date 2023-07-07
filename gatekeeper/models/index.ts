@@ -59,12 +59,7 @@ export interface IProfile extends IBaseModel {
   appointmentsAsReferredBy: IAppointment[];
 }
 
-type SpecialResource = 'ALL' | 'INDEPENDENT';
-export interface IPermission {
-  [resourceTypeName: string]: {
-    [permission: string]: SpecialResource | string[]; // <ObjectId> | 'SELF'
-  };
-}
+export type IPermission = Record<IDbSchemaKey, number>;
 
 export interface IRole extends IBaseModel {
   name: string;
@@ -205,7 +200,7 @@ export interface ILeave extends IBaseModel {
 }
 
 export interface ITaskStatus extends IBaseModel {
-	name: string;
+  name: string;
 }
 
 export interface ISubTask extends IBaseModel {
@@ -217,33 +212,33 @@ export interface ISubTask extends IBaseModel {
 }
 
 export interface ITask extends IBaseModel {
-	title: string;
-	images?: string[];
-	description?: string;
-	assignedTo: IUser[];
-	subTasks: ISubTask[];
-	status: ITaskStatus;
-	expectedCompletionTime: Date;
+  title: string;
+  images?: string[];
+  description?: string;
+  assignedTo: IUser[];
+  subTasks: ISubTask[];
+  status: ITaskStatus;
+  expectedCompletionTime: Date;
 }
 
 export interface IGoal extends IBaseModel {
-	title: string;
-	description?: string;
-	achieved: boolean;
+  title: string;
+  description?: string;
+  achieved: boolean;
 }
 
 export interface IProject extends IBaseModel {
-	title: string;
-	description?: string;
-	tasks: ITask[];
-	goals: IGoal[];
-	teams: ITeam[];
+  title: string;
+  description?: string;
+  tasks: ITask[];
+  goals: IGoal[];
+  teams: ITeam[];
 }
 
 export interface ITeam extends IBaseModel {
-	name: string;
-	description?: string;
-	users: IUser[];
+  name: string;
+  description?: string;
+  users: IUser[];
 }
 
 export type ModelSchemasTypes = Readonly<{
@@ -264,18 +259,18 @@ export type ModelSchemasTypes = Readonly<{
   ipd: IIpd;
   test: ITest;
   payment: IPayment;
-	taskStatus: ITaskStatus;
-	subTask: ISubTask;
-	task: ITask;
-	goal: IGoal;
-	project: IProject;
-	team: ITeam;
+  taskStatus: ITaskStatus;
+  subTask: ISubTask;
+  task: ITask;
+  goal: IGoal;
+  project: IProject;
+  team: ITeam;
 }>;
 
 export type Document<T> = Omit<mongoose.Document, '_id'> & T;
-export type PaginateModel<T> = mongoose.PaginateModel<Document<T>>; 
+export type PaginateModel<T> = mongoose.PaginateModel<Document<T>>;
 
-export type IDbSchemaKeys = keyof ModelSchemasTypes;
+export type IDbSchemaKey = keyof ModelSchemasTypes;
 
 export interface PaginatedListIResponse<T> {
   docs: T[];

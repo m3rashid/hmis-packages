@@ -1,5 +1,4 @@
 import * as ERRORS from './utils/errors';
-
 import * as addressValidator from './validators/address';
 import * as appointmentValidator from './validators/appointment';
 import * as attendanceValidator from './validators/attendance';
@@ -20,6 +19,20 @@ import * as MODELS from './models/index';
 import * as ENUMS from './models/enums';
 import { modelNames } from './models/names';
 import { paginatedCompiledModel } from './models/utils';
+import {
+  permissionValue,
+  permissionKeys,
+  PERMISSION,
+  Permission,
+  PermissionKey,
+  PermissionValue,
+  convertPermissionToReadable,
+  hasPermission,
+  transformPermission,
+  permissionBuilder,
+} from './utils/permissions';
+
+export type { Permission, PermissionKey, PermissionValue };
 
 export {
   ERRORS,
@@ -43,4 +56,11 @@ export {
   ENUMS,
   modelNames,
   paginatedCompiledModel,
+  permissionValue,
+  permissionKeys,
+  PERMISSION,
+  convertPermissionToReadable,
+  hasPermission,
+  transformPermission,
+  permissionBuilder,
 };
