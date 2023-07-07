@@ -63,7 +63,6 @@ export type IPermission = Record<IDbSchemaKey, number>;
 
 export interface IRole extends IBaseModel {
   name: string;
-  description?: string;
   permissions: IPermission;
 }
 
