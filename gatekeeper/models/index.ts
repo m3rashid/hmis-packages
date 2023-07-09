@@ -251,8 +251,6 @@ export interface IDashboardWidget extends IBaseModel {
   chartType: string;
   height: number;
   width: number;
-	response?: any;
-  refreshTime: number; // in seconds
 }
 
 export type ModelSchemasTypes = Readonly<{
