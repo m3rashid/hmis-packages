@@ -249,6 +249,10 @@ export interface IDashboardWidget extends IBaseModel {
   modelName: IDbSchemaKey;
   durationMonths: number;
   chartType: string;
+  height: number;
+  width: number;
+	response?: any;
+  refreshTime: number; // in seconds
 }
 
 export type ModelSchemasTypes = Readonly<{
