@@ -21,8 +21,5 @@ export const modelNames: Record<IDbSchemaKey, string> = {
   taskStatus: 'TaskStatus',
   subTask: 'SubTask',
   task: 'Task',
-  goal: 'Goal',
-  team: 'Team',
-  project: 'Project',
   dashboardWidget: 'DashboardWidget',
 } as const;

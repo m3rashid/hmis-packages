@@ -220,26 +220,6 @@ export interface ITask extends IBaseModel {
   expectedCompletionTime: Date;
 }
 
-export interface IGoal extends IBaseModel {
-  title: string;
-  description?: string;
-  achieved: boolean;
-}
-
-export interface IProject extends IBaseModel {
-  title: string;
-  description?: string;
-  tasks: ITask[];
-  goals: IGoal[];
-  teams: ITeam[];
-}
-
-export interface ITeam extends IBaseModel {
-  name: string;
-  description?: string;
-  users: IUser[];
-}
-
 export interface IDashboardWidget extends IBaseModel {
   title: string;
   description: string;
@@ -274,9 +254,6 @@ export type ModelSchemasTypes = Readonly<{
   taskStatus: ITaskStatus;
   subTask: ISubTask;
   task: ITask;
-  goal: IGoal;
-  project: IProject;
-  team: ITeam;
   dashboardWidget: IDashboardWidget;
 }>;
 
