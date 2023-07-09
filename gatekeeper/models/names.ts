@@ -24,4 +24,5 @@ export const modelNames: Record<IDbSchemaKey, string> = {
   goal: 'Goal',
   team: 'Team',
   project: 'Project',
+  dashboardWidget: 'DashboardWidget',
 } as const;

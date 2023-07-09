@@ -240,6 +240,17 @@ export interface ITeam extends IBaseModel {
   users: IUser[];
 }
 
+export interface IDashboardWidget extends IBaseModel {
+  title: string;
+  description: string;
+  queryOptions: Record<string, any>;
+  kpiIndicator?: string;
+  kpiValue?: string;
+  modelName: IDbSchemaKey;
+  durationMonths: number;
+  chartType: string;
+}
+
 export type ModelSchemasTypes = Readonly<{
   address: IAddress;
   appointment: IAppointment;
@@ -264,6 +275,7 @@ export type ModelSchemasTypes = Readonly<{
   goal: IGoal;
   project: IProject;
   team: ITeam;
+  dashboardWidget: IDashboardWidget;
 }>;
 
 export type Document<T> = Omit<mongoose.Document, '_id'> & T;
