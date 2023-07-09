@@ -33,7 +33,7 @@ export const newZodErrors = (errors: ZodError['issues']) => {
 };
 
 export const useRoute =
-  (check: any) => (req: Request, res: Response, next: NextFunction) => {
+  (check: any) => async (req: Request, res: Response, next: NextFunction) => {
     Promise.resolve(check(req, res, next)).catch(next);
   };
 

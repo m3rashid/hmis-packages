@@ -30,6 +30,7 @@ import {
   hasPermission,
   transformPermission,
   permissionBuilder,
+  convertPermissionsToNumber,
 } from './utils/permissions';
 
 export type { Permission, PermissionKey, PermissionValue };
@@ -63,4 +64,5 @@ export {
   hasPermission,
   transformPermission,
   permissionBuilder,
+  convertPermissionsToNumber,
 };
