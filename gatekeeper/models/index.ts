@@ -243,7 +243,7 @@ export interface ITeam extends IBaseModel {
 export interface IDashboardWidget extends IBaseModel {
   title: string;
   description: string;
-  queryOptions: Record<string, any>;
+  aggregation: Array<Record<string, any>>;
   kpiIndicator?: string;
   kpiValue?: string;
   modelName: IDbSchemaKey;
