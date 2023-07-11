@@ -57,3 +57,15 @@ export const IPD_STATUS = ['ADMITTED', 'DISCHARGED', 'DEAD'] as const;
 export const APPOINTMENT_TYPE = ['WALK_IN', 'MOBILE_CALL'] as const;
 
 export const USER_ORIGIN = ['INTERNAL', 'EXTERNAL'] as const;
+
+export const TASK_STATUS = [
+  'OPEN',
+  'PENDING',
+  'ARCHIVED',
+  'ACCEPTED',
+  'REJECTED',
+  'BLOCKED',
+  'COMPLETED',
+  'CLOSED',
+  'IN_PROGRESS',
+] as const;

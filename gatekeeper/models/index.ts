@@ -1,5 +1,6 @@
 import mongoose from 'mongoose';
 import 'mongoose-paginate-v2';
+import { TASK_STATUS } from './enums';
 
 export interface ILoginUser {
   _id: string;
@@ -198,9 +199,7 @@ export interface ILeave extends IBaseModel {
   status: string;
 }
 
-export interface ITaskStatus extends IBaseModel {
-  name: string;
-}
+export type ITaskStatus = (typeof TASK_STATUS)[number];
 
 export interface ISubTask extends IBaseModel {
   title: string;
