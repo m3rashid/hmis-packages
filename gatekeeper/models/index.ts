@@ -231,6 +231,10 @@ export interface IDashboardWidget extends IBaseModel {
   height: number;
   width: number;
 }
+export interface IUpload extends IBaseModel {
+	url: string;
+	format: string
+}
 
 export type ModelSchemasTypes = Readonly<{
   address: IAddress;
@@ -254,6 +258,7 @@ export type ModelSchemasTypes = Readonly<{
   subTask: ISubTask;
   task: ITask;
   dashboardWidget: IDashboardWidget;
+	upload: IUpload
 }>;
 
 export type Document<T> = Omit<mongoose.Document, '_id'> & T;
